@@ -1,5 +1,5 @@
 # https://github.com/sparkbox/apprenticeships/blob/overhaul/basic-programming/project-triangle-kata.md
-# Updated by Betty Balker
+# Updated by Heather Taylor
 # March 3, 2017
 
 def triangle(a, b, c)
@@ -12,4 +12,8 @@ def triangle(a, b, c)
   end
 end
 
-triangle = 1, 1, 1
+triangle(1, 1, 1) # equilateral
+
+triangle(1, 2, 3) # scalene
+
+triangle(2, 2, 3) # isosceles
