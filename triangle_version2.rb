@@ -1,5 +1,5 @@
 # https://github.com/sparkbox/apprenticeships/blob/overhaul/basic-programming/project-triangle-kata.md
-# Last update: March 7, 2017 by Heather
+# Last update: March 9, 2017 by Heather
 
 class Triangle
   attr_accessor :a, :b, :c, :sides
@@ -11,7 +11,7 @@ class Triangle
     @sides = [a, b, c].sort!
   end
   
-  def test_sides
+  def sides_make_triangle
     if sides[0] == 0
       puts "All sides must be greater than zero."
       puts "The three lengths #{a}, #{b} and #{c} do not create a triangle."
@@ -20,7 +20,7 @@ class Triangle
     end
   end
   
-  def test_sum
+  def sum_makes_triangle
     if (sides[0].to_i + sides[1].to_i) >= sides[2].to_i
       puts "Yay! #{a}, #{b} and #{c} create a triangle."
     else
@@ -32,7 +32,7 @@ class Triangle
 end # end triangle class
 
 class Equilaterial < Triangle
-  def test_equilaterial
+  def equilaterial_triangle
     if sides[0] == sides[1] && sides[1] == sides[2]
       puts "All sides are equal."
       puts "This is an equilaterial triangle."
@@ -43,7 +43,7 @@ class Equilaterial < Triangle
 end # end Equilaterial
 
 class Isoceles < Triangle
-  def test_isoceles
+  def isoceles_triangle
     if sides[0] == sides[1] || sides[1] == sides[2]
       puts "Two sides are equal."
       puts "This is an isoceles triangle."
@@ -54,7 +54,7 @@ class Isoceles < Triangle
 end # end Isoceles
 
 class Scalene < Triangle
-  def test_scalene
+  def scalene_triangle
     if sides[0] != sides[1] && sides[1] != sides[2]
       puts "This is a scalene triangle."
     else
@@ -64,7 +64,7 @@ class Scalene < Triangle
 end # end Scalene
 
 class RightAngle < Triangle
-  def test_right_angle
+  def right_angle_triangle
     if (sides[0]*sides[0]) + (sides[1]*sides[1]) == (sides[2]*sides[2]) || (sides[1]*sides[1]) + (sides[2]*sides[2]) == (sides[0]*sides[0]) || (sides[0]*sides[0]) + (sides[2]*sides[2]) == (sides[1]*sides[1]) 
       puts "This is a right triangle."
     else
@@ -73,43 +73,47 @@ class RightAngle < Triangle
   end
 end # end RightAngle
 
+class WhichTriangle # class created to allow a user to input 3 lengths and see if it makes a traingle
+  
+end
+
 ############################
 
 puts "This is from the Triangle class:"
 a = Triangle.new(1, 2, 3)
-a.test_sides
+a.sides_make_triangle
 
 puts "\nThis is also from the Triangle class:"
 b = Triangle.new(0, 3, 5)
-b.test_sides
+b.sides_make_triangle
 
 puts "\nThis is from the Equilaterial class:"
 c = Equilaterial.new(1, 1, 1)
-c.test_sum
-c.test_equilaterial
+c.sum_makes_triangle
+c.equilaterial_triangle
 
 puts "\nThis is also from the Equilaterial class:"
 d = Equilaterial.new(20, 5, 5)
-d.test_sum
-d.test_equilaterial
+d.sum_makes_triangle
+d.equilaterial_triangle
 
 puts "\nThis is from the Isoceles class:"
 e = Isoceles.new(2, 3, 4)
-e.test_sum
-e.test_isoceles
+e.sum_makes_triangle
+e.isoceles_triangle
 
 puts "\nThis is from the Scalene class:"
 f = Scalene.new(2, 2, 4)
-f.test_sides
-f.test_scalene
+f.sides_make_triangle
+f.scalene_triangle
 
 puts "\nThis is from the RightAngle class:"
 g = RightAngle.new(3, 3, 6)
-g.test_sides
-g.test_right_angle
+g.sides_make_triangle
+g.right_angle_triangle
 
 puts "\nThis is also from the RightAngle class:"
 h = RightAngle.new(12, 35, 37)
-h.test_sum
-h.test_right_angle
+h.sum_makes_triangle
+h.right_angle_triangle
 
