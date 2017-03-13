@@ -1,5 +1,5 @@
 # https://github.com/sparkbox/apprenticeships/blob/overhaul/basic-programming/project-triangle-kata.md
-# Last update: March 9, 2017 by Heather
+# Last update: March 13, 2017 by Heather
 class Triangle
   attr_accessor :a, :b, :c, :sides
   
@@ -13,18 +13,18 @@ class Triangle
   def sides_make_triangle
     if sides[0] == 0
       puts "All sides must be greater than zero."
-      puts "The three lengths #{a}, #{b} and #{c} do not create a triangle."
+      puts "The three lengths #{sides[0]}, #{sides[1]} and #{sides[2]} do not create a triangle."
     else
-      puts "Yay! #{a}, #{b} and #{c} create a triangle."
+      puts "Yay! These lengths: #{sides[0]}, #{sides[1]} and #{sides[2]} create a triangle."
     end
   end
   
   def sum_makes_triangle
     if (sides[0].to_i + sides[1].to_i) >= sides[2].to_i
-      puts "Yay! #{a}, #{b} and #{c} create a triangle."
+      puts "Yay! The sum of sides #{sides[0]}, #{sides[1]} and #{sides[2]} create a triangle."
     else
       puts "The sum of any two sides must be greater than or equal to the third."
-      puts "The three lengths #{a}, #{b} and #{c} do not create a traingle."
+      puts "The three lengths #{sides[0]}, #{sides[1]} and #{sides[2]} do not create a traingle."
     end
   end
   
@@ -33,9 +33,10 @@ end
 =begin
 puts "This is from the Triangle class:"
 a = Triangle.new(1, 2, 3)
-a.sides_make_triangleo
+a.sides_make_triangle
 
 puts "\nThis is also from the Triangle class:"
 b = Triangle.new(0, 3, 5)
-b.sides_make_triangle
+b.sum_makes_triangle
 =end
+
